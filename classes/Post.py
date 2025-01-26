@@ -8,19 +8,51 @@ class Post:
     """
     A class used to represent post on Nitzagram
     """
-    def __init__(self): #TODO: add parameters
-        #TODO: write me!
-        pass
+    def __init__( self,username, location, desc, likes, comments = None):
+        self.username = username
+        self.location = location
+        self.desc = desc
+        self.likes = likes
+        if comments is None:
+            self.comments = []
+        else:
+            self.comments = comments
+
+
+    def add_like(self):
+        self.likes += 1
+
+    
 
     def display(self):
         """
-        Display the Post image/Text, description, location, likes and comments
+        Display the Post image or textText, description, location, likes and comments
         on screen
 
         :return: None
         """
-        # TODO: write me!
-        pass
+
+        # Display the post
+        #display the description
+        description_font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE)
+        description = description_font.render(self.desc, True, BLACK)
+        screen.blit(description, (DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS))
+        #display the location
+        location_font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE)
+        location = location_font.render(self.location, True, BLACK)
+        screen.blit(location, (LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS))
+        #display the likes
+        likes_font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE)
+        likes = likes_font.render(str(self.likes), True, BLACK)
+        screen.blit(likes, (LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS))
+        #display the username
+        username_font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE)
+        username = username_font.render(self.username, True, BLACK)
+        screen.blit(username, (USER_NAME_X_POS, USER_NAME_Y_POS))
+        
+
+
+        
 
 
     def display_comments(self):
