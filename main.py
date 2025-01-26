@@ -4,20 +4,19 @@ from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
 
 
 def main():
-    # Set up the game display, clock and headline
+    # Set up the game display, clock and headlinegjhjhhjjhnjjhkj
     pygame.init()
     #ksdfjlsg;lsjdgsdfkj
     # Change the title of the window
     pygame.display.set_caption('Nitzagram')
-sdfsfsdf
     clock = pygame.time.Clock()
-;kjlijlhlkjiklugluy75856784875
     # Set up background image
     background = pygame.image.load('Images/background.png')
     background = pygame.transform.scale(background,
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     # TODO: add a post here
+def imagePost(Post)
 
     running = True
     while running:
