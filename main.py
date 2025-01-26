@@ -1,22 +1,24 @@
 import pygame
 from helpers import screen
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
-
+from classes import Post  # Import the Post class
 
 def main():
     # Set up the game display, clock and headline
     pygame.init()
-    #ksdfjlsg;lsjdgsdfkj
     # Change the title of the window
     pygame.display.set_caption('Nitzagram')
     clock = pygame.time.Clock()
-;kjlijlhlkjiklugluy75856784875
     # Set up background image
     background = pygame.image.load('Images/background.png')
+    
     background = pygame.transform.scale(background,
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
-    # TODO: add a post here
+    # Create a Post object with the Noa Kirel image
+    path = "C:\\Users\\User\Desktop\\פרוייקט ניצנים\\Nitzagram2025\\Images\\noa_kirel.jpg"
+    post = Post.Post('Noa Kirel', 'Tel Aviv', 'Noa Kirel in Tel Aviv', 100)
+    post.display()
 
     running = True
     while running:
@@ -29,6 +31,9 @@ def main():
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)
         screen.blit(background, (0, 0))
+        
+        # Display the post
+        post.display()
 
         # Update display - without input update everything
         pygame.display.update()
@@ -37,6 +42,5 @@ def main():
         clock.tick(60)
     pygame.quit()
     quit()
-
 
 main()
