@@ -1,7 +1,9 @@
 import pygame
 from helpers import screen
-from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
-from classes import Post  # Import the Post class
+from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK, GREY
+import classes.Post
+import  classes.TextPost
+# Import the Post class
 
 def main():
     # Set up the game display, clock and headline
@@ -17,8 +19,8 @@ def main():
 
     # Create a Post object with the Noa Kirel image
     path = "C:\\Users\\User\Desktop\\פרוייקט ניצנים\\Nitzagram2025\\Images\\noa_kirel.jpg"
-    post = Post.Post('Noa Kirel', 'Tel Aviv', 'Noa Kirel in Tel Aviv', 100)
-    post.display()
+    #do it with a red background
+    post = classes.TextPost.TextPost("Noa Kirel", "Tel Aviv", "Shabbat Shalom", 100, "Shabbat Shalom", (0, 0, 0), (GREY))
 
     running = True
     while running:
