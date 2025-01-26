@@ -6,10 +6,10 @@ from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
 def main():
     # Set up the game display, clock and headline
     pygame.init()
-
+    #ksdfjlsg;lsjdgsdfkj
     # Change the title of the window
     pygame.display.set_caption('Nitzagram')
-asdasdasd
+
     clock = pygame.time.Clock()
 
     # Set up background image
