@@ -11,7 +11,7 @@ def main():
     pygame.display.set_caption('Nitzagram')
 sdfsfsdf
     clock = pygame.time.Clock()
-
+;kjlijlhlkjiklugluy75856784875
     # Set up background image
     background = pygame.image.load('Images/background.png')
     background = pygame.transform.scale(background,
