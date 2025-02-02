@@ -13,6 +13,7 @@ class Post:
         self.location = location
         self.desc = desc
         self.likes = likes
+        self.comments_display_index = 0
         if comments is None:
             self.comments = []
         else:
@@ -49,7 +50,7 @@ class Post:
         username_font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE)
         username = username_font.render(self.username, True, BLACK)
         screen.blit(username, (USER_NAME_X_POS, USER_NAME_Y_POS))
-        
+        self.display_comments()
 
 
         
