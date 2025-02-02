@@ -1,8 +1,9 @@
 import pygame
-from helpers import screen
+from helpers import screen, read_comment_from_user
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK, GREY
 import classes.Post
 import  classes.TextPost
+import classes.Comment
 # Import the Post class
 
 def main():
@@ -20,7 +21,10 @@ def main():
     # Create a Post object with the Noa Kirel image
     path = "C:\\Users\\User\Desktop\\פרוייקט ניצנים\\Nitzagram2025\\Images\\noa_kirel.jpg"
     #do it with a red background
-    post = classes.TextPost.TextPost("Noa Kirel", "Tel Aviv", "Shabbat Shalom", 100, "Shabbat Shalom", (0, 0, 0), (GREY))
+    commect_list = [classes.Comment.Comment("Nice!")]
+    post = classes.TextPost.TextPost("Noa Kirel", "Tel Aviv", "Shabbat Shalom", 100, "Shabbat Shalom", (0, 0, 0), (GREY), commect_list)
+
+    
 
     running = True
     while running:
@@ -36,7 +40,9 @@ def main():
         
         # Display the post
         post.display()
-
+        
+        # Display the comments
+        read_comment_from_user()
         # Update display - without input update everything
         pygame.display.update()
 

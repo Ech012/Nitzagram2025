@@ -1,7 +1,7 @@
 import pygame
 
 from constants import *
-from helpers import screen
+from helpers import *
 
 from classes.Post import Post
 
@@ -18,12 +18,10 @@ class TextPost(Post):
         super().display()
 
         # Display the text on the post
+        self.text_font = from_text_to_array(self.text)
+
         text_font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE)
         text = text_font.render(self.text, True, self.text_color, self.background_color)
-        screen.blit(text, (POST_X_POS, POST_Y_POS))
+        for i in self.text:
+            screen.blit(self.text_font[i], (center_text(2, self.text[i], i)))
 
-    def display_comments(self):
-        """
-        Display comments on post. In case there are more than 4
-        """
-        pass
