@@ -18,10 +18,12 @@ class TextPost(Post):
         super().display()
 
         # Display the text on the post
-        self.text_font = from_text_to_array(self.text)
-
-        text_font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE)
-        text = text_font.render(self.text, True, self.text_color, self.background_color)
-        for i in self.text:
-            screen.blit(self.text_font[i], (center_text(2, self.text[i], i)))
+        text_arr = from_text_to_array(self.text)
+        
+        #diplay a rectangle with the background color
+        pygame.draw.rect(screen, self.background_color, (POST_X_POS, POST_Y_POS, POST_WIDTH, POST_HEIGHT))
+        for i in range(len(text_arr)):
+            text_font = pygame.font.SysFont('chalkduster.ttf', TEXT_POST_FONT_SIZE)
+            text = text_font.render(text_arr[i], True, self.text_color)
+            screen.blit(text, (center_text(len(text_arr), text, i)))
 
